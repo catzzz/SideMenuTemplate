@@ -14,6 +14,7 @@ class MenuController: UIViewController{
     //MARK: - Properties
     
     var tableView: UITableView!
+    var delegate: HomeControllerDelegage?
   
     
     //MARK: - Init
@@ -42,6 +43,8 @@ class MenuController: UIViewController{
         tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
     }
     
+    
+    
 }
 
 extension MenuController: UITableViewDelegate,UITableViewDataSource{
@@ -59,6 +62,9 @@ extension MenuController: UITableViewDelegate,UITableViewDataSource{
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let menuOption = MenuOption(rawValue: indexPath.row)
+        delegate?.handleMenuToggle(forMenuOption: menuOption)
+    }
 }
 

@@ -18,6 +18,7 @@
 		08B2470222A6E4E9001123CF /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B2470122A6E4E9001123CF /* Protocols.swift */; };
 		08B2470422A6EAE0001123CF /* MenuOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B2470322A6EAE0001123CF /* MenuOptionCell.swift */; };
 		08B2470622A7089C001123CF /* MenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B2470522A7089C001123CF /* MenuOption.swift */; };
+		08B2470822A718D7001123CF /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B2470722A718D7001123CF /* SettingController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		08B2470122A6E4E9001123CF /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		08B2470322A6EAE0001123CF /* MenuOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOptionCell.swift; sourceTree = "<group>"; };
 		08B2470522A7089C001123CF /* MenuOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOption.swift; sourceTree = "<group>"; };
+		08B2470722A718D7001123CF /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 				0879345522A4B14A00D2B385 /* ContainerController.swift */,
 				0879345722A4B16100D2B385 /* HomeController.swift */,
 				0879345922A4B33100D2B385 /* MenuController.swift */,
+				08B2470722A718D7001123CF /* SettingController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				08B2470422A6EAE0001123CF /* MenuOptionCell.swift in Sources */,
 				08B2470622A7089C001123CF /* MenuOption.swift in Sources */,
 				0879345A22A4B33100D2B385 /* MenuController.swift in Sources */,
+				08B2470822A718D7001123CF /* SettingController.swift in Sources */,
 				0879345822A4B16100D2B385 /* HomeController.swift in Sources */,
 				0879343222A4B0DE00D2B385 /* AppDelegate.swift in Sources */,
 				0879345622A4B14A00D2B385 /* ContainerController.swift in Sources */,
