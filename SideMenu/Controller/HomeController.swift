@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeController.swift
 //  SideMenu
 //
 //  Created by Jimmy Leu on 2019/6/2.
@@ -8,13 +8,17 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class HomeController: UIViewController{
+    //MARK: - Properties
+    
+    //MARK: - Init
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        view.backgroundColor = .blue
     }
-
-
+    
+    //MARK: - Handlers
+    
 }
-
