@@ -53,14 +53,14 @@ class ContainController: UIViewController{
     func showMenuController(shouldExpand: Bool){
         if shouldExpand{
             // show menu
-            UIView.animate(withDuration: 0, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
                 
                 self.centerController.view.frame.origin.x = self.centerController.view.frame.width - 80
                 
             }, completion: nil)
         }else{
             // hide menu
-            UIView.animate(withDuration: 0, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
                 
                 self.centerController.view.frame.origin.x = 0
                 
@@ -72,10 +72,11 @@ class ContainController: UIViewController{
 
 extension ContainController:HomeControllerDelegage{
     func handleMenuToggle() {
-        //configureMenuController()
+ 
         if !isExpanded{
             configureMenuController()
         }
+        
         isExpanded = !isExpanded
         showMenuController(shouldExpand: isExpanded)
     }
