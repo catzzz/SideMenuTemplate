@@ -73,18 +73,19 @@ class SettingController: UIViewController {
 extension SettingController: UITableViewDelegate,UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        
+        return SettingsSection.allCases.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
+        guard let section = SettingsSection(rawValue: section) else { return 0 }
+        
         switch section {
-        case 0:
-            return 2
-        case 1:
-            return 3
-        default:
-            return 0
+        case .Social:
+            return SocialOptions.allCases.count
+        case .Communications:
+            return CommunicationOptions.allCases.count
         }
         
     }
@@ -94,7 +95,7 @@ extension SettingController: UITableViewDelegate,UITableViewDataSource {
         
         let title = UILabel()
         title.font = UIFont.boldSystemFont(ofSize: 16)
-        title.text = "Test"
+        title.text = SettingsSection(rawValue: section)?.description
         title.textColor = .white
         view.addSubview(title)
         title.translatesAutoresizingMaskIntoConstraints = false
@@ -113,13 +114,16 @@ extension SettingController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! SettingsCell
         
-        switch indexPath.section {
-        case 0:
-            cell.backgroundColor = .white
-        case 1:
-            cell.backgroundColor = .white
-        default:
-            break
+        guard let section = SettingsSection(rawValue:indexPath.section) else {return UITableViewCell()}
+        
+        switch section {
+        case .Social:
+            let social = SocialOptions(rawValue: indexPath.row)
+            cell.textLabel?.text = social?.description
+        case .Communications:
+            let social = SocialOptions(rawValue: indexPath.row)
+            cell.textLabel?.text = social?.description
+
         }
         
         return cell
