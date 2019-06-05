@@ -119,10 +119,12 @@ extension SettingController: UITableViewDelegate,UITableViewDataSource {
         switch section {
         case .Social:
             let social = SocialOptions(rawValue: indexPath.row)
-            cell.textLabel?.text = social?.description
+            //cell.textLabel?.text = social?.description
+            cell.sectionType = social
         case .Communications:
-            let social = SocialOptions(rawValue: indexPath.row)
-            cell.textLabel?.text = social?.description
+            let communications = CommunicationOptions(rawValue: indexPath.row)
+            //cell.textLabel?.text = social?.description
+            cell.sectionType = communications
 
         }
         

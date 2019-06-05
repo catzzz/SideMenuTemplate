@@ -6,6 +6,12 @@
 //  Copyright © 2019 Jimmy Leu. All rights reserved.
 //
 
+
+protocol SectionType:CustomStringConvertible {
+    var containSwitch: Bool { get }
+    
+}
+
 enum SettingsSection: Int,CaseIterable,CustomStringConvertible{
 
     
@@ -25,11 +31,13 @@ enum SettingsSection: Int,CaseIterable,CustomStringConvertible{
 }
 
 
-enum SocialOptions: Int,CaseIterable,CustomStringConvertible{
+enum SocialOptions: Int,CaseIterable,SectionType {
+    case editProfile
+    case logOut
     
-    
-    case editProfile = 0
-    case logOut = 1
+    var containSwitch: Bool {
+        return false
+    }
     
     var description: String {
         switch self {
@@ -43,14 +51,12 @@ enum SocialOptions: Int,CaseIterable,CustomStringConvertible{
     
 }
 
-enum CommunicationOptions: Int,CaseIterable,CustomStringConvertible{
-    
-    
+enum CommunicationOptions: Int,CaseIterable,SectionType {
+
     case notifications
     case email
     case reportCrashes
 
-    
     var description: String {
         switch self {
         case .notifications:
@@ -61,6 +67,21 @@ enum CommunicationOptions: Int,CaseIterable,CustomStringConvertible{
             return "Report Crashes"
         }
     }
+    
+    var containSwitch: Bool {
+        switch self {
+        case .notifications:
+            return true
+        case .email:
+            return true
+        case .reportCrashes:
+            return false
+        }
+    }
+    
+
+    
+
     
     
 }
