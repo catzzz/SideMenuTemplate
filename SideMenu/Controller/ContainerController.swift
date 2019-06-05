@@ -90,7 +90,7 @@ class ContainController: UIViewController{
             print("Show Notification")
         case .Setting:
             let controller = SettingController()
-            controller.username = "Batman"
+    
             present(UINavigationController(rootViewController: controller), animated: true, completion: nil)
         }
     }
